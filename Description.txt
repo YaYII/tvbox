@@ -1,0 +1,57 @@
+//初始化可操作对象。
+        butArray = [];
+		addButData(new but("图片对象的id","图片对象的div Id", "图片默认情况下的地址", "图片选中情况下的地址","图片关闭情况下的地址",
+        		"确定按钮所触发的链接","游戏的id","图片的名称", "历史选中情况下的地址",确定按键所执行的方法,上键执行的方法,下键执行的方法,左键执行的方法,右键执行的方法,选中事件,离开事件));
+		rowList.push(butArray);
+		
+//初始化的时候		
+实例：	
+<script type="text/javascript">
+      window.onload=function(){
+			butArray = [];
+			addButData(new but("zhuanTi-adv2",		//图片对象的id
+								"zhuanTi-div-adv2", //图片对象的div Id
+								"",					//图片默认情况下的地址
+								"/fengchejs/images/zhuanTi/2.png", //图片选中情况下的地址
+								"",					//图片关闭情况下的地址
+								"",					//确定按钮所触发的链接
+								"0",				//游戏的id
+								"返回按钮", 		//图片的名称
+								"",					//历史选中情况下的地址
+								key_back_event,		//确定按键所执行的方法 直接方法名称是可以直接执行的。
+								"",					//上键执行的方法		
+								"adv2bottomClick",	//下键执行的方法		直接传入字符串方法名称也是可以执行的
+								"",					//左键执行的方法		
+								"",					//右键执行的方法		
+								"",					//执行选中事件
+								""					//执行离开事件
+							)
+					);		
+			rowList.push(butArray);
+			
+			 //初始化对象坐标 focus 对象是框架内置的光标位置。用于控制光标的移动。
+			focus.x = 1;
+			focus.y = 0;
+			//显示默认文件
+			rowList[focus.x][focus.y].show();
+		}
+		
+	//为了满足运营的特殊癖好和用户的特殊爱好以及运营商的特殊要求，直接执行对应的方法，从而实现要求
+	//按下键执行的方法。
+	function adv2bottomClick(obj){
+		focus.x = 1;
+        focus.y = 1;
+	}
+	
+	//返回键
+	function key_back_event() {
+		window.location.href="/fengchejs/home/hotGame";
+	}
+  </script>
+  
+  当然这个仅仅是一个简单的使用案例。此案例是教你怎么初始化数据。怎么产生对象数据。
+  focus 内置对象
+  butArray  内置一维数组
+  rowList   内置的二维数组
+  对象内置的显示图片的方法 show()
+  对象内置的隐藏图片的方法 hide()
