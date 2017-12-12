@@ -328,10 +328,10 @@ function key_down_event() {
 
 //确定
 function key_enter_event() {
-	if(rowList[focus.x][focus.y].eventClick != ""){
-		rowList[focus.x][focus.y].eventClick();
-	}else{
+	if(rowList[focus.x][focus.y].enterUrl != ""){
 		window.location.href = rowList[focus.x][focus.y].enterUrl;
+	}else{
+		rowList[focus.x][focus.y].eventClick();
 	}
 }
 
