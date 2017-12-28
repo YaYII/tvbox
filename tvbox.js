@@ -214,7 +214,7 @@ function addButData(but){
 	butArray.push(but);
 }
 //初始化图片对象
-function but(id,divId,imgdefaultsrc,imgshowsrc,imghidesrc,enterUrl,gameId,title,historysrc,eventClick,topClick,bottomClick,leftClick,rigthClick,focusEvent,leaveEvent){
+function but(id,divId,imgdefaultsrc,imgshowsrc,imghidesrc,enterUrl,gameId,title,historysrc,eventClick,topClick,bottomClick,leftClick,rigthClick,focusEvent,leaveEvent,index){
 	var butobj = {
 			"id" : id,
 			"divId":divId,
@@ -224,6 +224,7 @@ function but(id,divId,imgdefaultsrc,imgshowsrc,imghidesrc,enterUrl,gameId,title,
 			"enterUrl":enterUrl,
 			"gameId":gameId,
 			"title":title,
+			"index":index,
 			"historysrc":historysrc,
 			"execEvent":function(type){
 				if(typeof(type) == "string"){
