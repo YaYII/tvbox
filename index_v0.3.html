@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div class="rowList">
+			<div class="a" id="cursor"  style="left: 10px; top:10px; opacity: 0.6; border-bottom: red solid 1px ; border-right: red solid 1px ; border-left: red solid 1px ; border-top: red solid 1px ; z-index: 9;">&nbsp;</div>
+		
+			<div class="addButData" id="host"  style="left: 10px; top:10px;" title="http://www.qq.com" >返回</div>
+			<div class="addButData" id="enter" style="left: 140px; top:10px;" >确认</div>
+			<div class="addButData" id="enter1" style="left: 270px; top:10px;">确认1</div>
+			<div class="addButData" id="enter2" style="left: 400px; top:10px;">确认2</div>
+			<div class="addButData" id="enter3" style="left: 530px; top:10px;">确认3</div>
+		</div>
+		<div class="rowList">
+			<div class="addButData b" id="div1"  style="left: 110px; top: 60px; ">产品1</div>
+			<div class="addButData" id="div2"  style="left: 240px; top: 60px;">产品2</div>
+		</div>
+		<div class="rowList">
+			<div class="addButData" id="div11"  style="left: 10px; top: 150px; ">产品1</div>
+			<div class="addButData" id="div12"  style="left: 140px; top:150px;">产品2</div>
+			<div class="addButData" id="div13"  style="left: 270px; top:150px;">产品2</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/tvbox.js" ></script>
+<script type="application/javascript">
+	window.onload=function(){
+		//默认装在对象
+		init();
+			
+		//初始化对象坐标 focus 对象是框架内置的光标位置。用于控制光标的移动。
+		focus.x = 0;
+		focus.y = 1; 
+		//显示
+		rowList[focus.x][focus.y].hide();
+		//装载对象特殊函数；
+		rowList[0][1].topClick=xx;
+		}
+	function xx(){
+		console.log("实现特殊功能，按上，跑到最下面去");
+		focus.x = 2;
+		focus.y = 1; 
+		rowList[focus.x][focus.y].hide();
+	}
+</script>
