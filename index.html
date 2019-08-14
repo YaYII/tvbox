@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div>
+			<div class="a" id="cursor"  style="left: 10px; opacity: 0.6; background: chocolate; z-index: 9;">&nbsp;</div>
+		
+			<div class="a" id="host"  style="left: 10px;">返回</div>
+			<div class="a" id="enter" style="left: 140px;">确认</div>
+			<div class="a" id="enter1" style="left: 270px;">确认1</div>
+			<div class="a" id="enter2" style="left: 400px;">确认2</div>
+			<div class="a" id="enter3" style="left: 530px;">确认3</div>
+		</div>
+		<div>
+			<div class="a" id="div1"  style="left: 10px; top: 60px; ">产品1</div>
+			<div class="a" id="div2"  style="left: 140px; top: 60px;">产品2</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/tvbox.js" ></script>
+<script type="text/javascript" src="js/indextObject.js" ></script>
+<script type="application/javascript">
+	window.onload=function(){
+			//第一行
+			butArray = [];
+			host.enterUrl ="http://www.qq.com";
+			addButData(host);
+			addButData(enter);
+			addButData(enter1);
+			addButData(enter2);
+			addButData(enter3);
+			rowList.push(butArray);
+			
+			//第二行
+			butArray = []; 
+			addButData(div1);
+			addButData(div2);
+			rowList.push(butArray);
+			
+			 //初始化对象坐标 focus 对象是框架内置的光标位置。用于控制光标的移动。
+			focus.x = 0;
+			focus.y = 0; 
+			//显示默认文件
+			rowList[focus.x][focus.y].show();
+		}
+</script>
